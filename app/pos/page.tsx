@@ -151,8 +151,8 @@ export default function POSPage() {
       <StandaloneTopBar
         title="Point of Sale"
         subtitle="Tap items to add them to the order"
-        backHref={user?.role === 'cashier' ? null : '/dashboard'}
-        right={heldOrders.length > 0 && (
+backHref={user?.role === 'cashier' ? '/dashboard/orders' : '/dashboard'}
+        backLabel={user?.role === 'cashier' ? 'Orders' : 'Dashboard'}        right={heldOrders.length > 0 && (
           <div className="relative group">
             <button className="btn-secondary text-xs py-1.5 px-3">
               Held orders ({heldOrders.length})
