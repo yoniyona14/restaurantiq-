@@ -72,8 +72,12 @@ export default function MenuClient({ restaurant, categories, items, tableNumber 
       <div className="max-w-2xl mx-auto px-4 py-6 space-y-3">
         {filtered.map(item => (
           <div key={item.id} className="card p-4 flex gap-4">
-            <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-2xl flex-shrink-0">
-              🍽️
+          <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center text-2xl flex-shrink-0 overflow-hidden">
+              {item.image_url ? (
+                <img src={item.image_url} alt={item.name} className="w-full h-full object-cover" />
+              ) : (
+                '🍽️'
+              )}
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-start justify-between gap-2">
